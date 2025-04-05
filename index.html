@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kavach Communication | DRDO</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Authentication Screen -->
+    <div id="auth-screen" class="auth-container">
+        <div class="auth-box">
+            <div class="auth-header">
+                <div class="logo-animation">
+                    <div class="circle"></div>
+                    <div class="wave"></div>
+                    <h1>Kavach</h1>
+                </div>
+                <p class="auth-subtitle">DRDO Secure Communication Portal</p>
+            </div>
+            
+            <div class="pin-container">
+                <div class="input-group">
+                    <label>ENTER SECURITY PIN</label>
+                    <div class="pin-input">
+                        <input type="password" maxlength="1" class="pin-digit" data-index="0">
+                        <input type="password" maxlength="1" class="pin-digit" data-index="1">
+                        <input type="password" maxlength="1" class="pin-digit" data-index="2">
+                        <input type="password" maxlength="1" class="pin-digit" data-index="3">
+                    </div>
+                    <p id="pin-error" class="error-message"></p>
+                    <p class="attempts-remaining">Attempts remaining: <span id="attempts">3</span></p>
+                </div>
+                
+                <button id="submit-pin" class="auth-btn">
+                    <span>Authenticate</span>
+                    <i class="fas fa-lock"></i>
+                </button>
+            </div>
+            
+            <button id="theme-toggle-auth" class="theme-toggle-btn" aria-label="Toggle dark mode">
+                <i class="fas fa-moon"></i>
+            </button>
+            
+            <div class="particles"></div>
+        </div>
+    </div>
+
+    <!-- Main Application -->
+    <div id="main-app" class="hidden">
+        <!-- Animated Background -->
+        <div class="animated-bg"></div>
+        
+        <header>
+            <div class="container">
+                <div class="logo">
+                    <div class="logo-mark">
+                        <div class="dot"></div>
+                        <div class="ring"></div>
+                    </div>
+                    <h1>Kavach <span>Communication</span></h1>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#overview"><i class="fas fa-info-circle"></i> Overview</a></li>
+                        <li><a href="#demo"><i class="fas fa-lock"></i> Secure Comms</a></li>
+                        <li><button id="theme-toggle" aria-label="Toggle dark mode"><i class="fas fa-moon"></i></button></li>
+                        <li><button id="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</button></li>
+                    </ul>
+                </nav>
+                <button class="mobile-menu-btn" aria-label="Mobile menu"><i class="fas fa-bars"></i></button>
+            </div>
+        </header>
+
+        <main>
+            <section class="hero">
+                <div class="container">
+                    <div class="hero-content">
+                        <h2>Military-Grade <span>Encrypted</span> Communications</h2>
+                        <p>Secure end-to-end encryption system with AES-256 cryptography for classified DRDO communications</p>
+                        <div class="cta-buttons">
+                            <a href="#demo" class="btn primary">
+                                <span>Try Secure Comms</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                        <div class="security-indicator">
+                            <div class="status-dot"></div>
+                            <span>Connection Secured</span>
+                        </div>
+                    </div>
+                    <div class="hero-image">
+                        <div class="encryption-visual">
+                            <div class="data-packet"></div>
+                            <div class="encryption-layer"></div>
+                            <div class="encryption-layer"></div>
+                            <div class="encryption-layer"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="overview" class="section">
+                <div class="container">
+                    <h2><i class="fas fa-shield-alt"></i> System Overview</h2>
+                    <div class="overview-content">
+                        <p>The Kavach Communication system provides military-grade encryption for sensitive DRDO communications. Using AES-256 with unique session keys, it ensures perfect forward secrecy and protection against interception.</p>
+                        
+                        <div class="feature-cards">
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-key"></i>
+                                </div>
+                                <h3>256-bit Encryption</h3>
+                                <p>Military-grade AES-256 encryption for all communications</p>
+                                <div class="pulse-effect"></div>
+                            </div>
+                            
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-sync-alt"></i>
+                                </div>
+                                <h3>Session Keys</h3>
+                                <p>Unique keys for each session with perfect forward secrecy</p>
+                                <div class="pulse-effect"></div>
+                            </div>
+                            
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-memory"></i>
+                                </div>
+                                <h3>Zero Storage</h3>
+                                <p>Keys never stored, generated on-demand for each session</p>
+                                <div class="pulse-effect"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="demo" class="section dark-bg">
+                <div class="container">
+                    <h2><i class="fas fa-lock"></i> Secure Communication</h2>
+                    
+                    <div class="comms-container">
+                        <div class="comms-row">
+                            <div class="comms-box">
+                                <div class="box-header">
+                                    <h3><i class="fas fa-keyboard"></i> Original Message</h3>
+                                    <div class="box-actions">
+                                        <button class="action-btn" title="Clear" id="clear-original">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <textarea id="original-message" placeholder="Type confidential message here..."></textarea>
+                                <button id="encrypt-btn" class="primary-btn">
+                                    <span>Encrypt</span>
+                                    <i class="fas fa-lock"></i>
+                                </button>
+                            </div>
+                            
+                            <div class="comms-box">
+                                <div class="box-header">
+                                    <h3><i class="fas fa-lock"></i> Encrypted Output</h3>
+                                    <div class="box-actions">
+                                        <button class="action-btn" title="Copy" id="copy-encrypted">
+                                            <i class="fas fa-copy"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <textarea id="encrypted-output" placeholder="Encrypted message will appear here..." readonly></textarea>
+                                <div class="encryption-stats">
+                                    <div class="stat">
+                                        <i class="fas fa-microchip"></i>
+                                        <span>AES-256-GCM</span>
+                                    </div>
+                                    <div class="stat">
+                                        <i class="fas fa-random"></i>
+                                        <span>Unique IV</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="comms-row">
+                            <div class="comms-box">
+                                <div class="box-header">
+                                    <h3><i class="fas fa-lock-open"></i> Encrypted Input</h3>
+                                    <div class="box-actions">
+                                        <button class="action-btn" title="Paste" id="paste-encrypted">
+                                            <i class="fas fa-paste"></i>
+                                        </button>
+                                        <button class="action-btn" title="Clear" id="clear-encrypted">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <textarea id="encrypted-input" placeholder="Paste encrypted message here..."></textarea>
+                                <button id="decrypt-btn" class="primary-btn">
+                                    <span>Decrypt</span>
+                                    <i class="fas fa-unlock"></i>
+                                </button>
+                            </div>
+                            
+                            <div class="comms-box">
+                                <div class="box-header">
+                                    <h3><i class="fas fa-check-circle"></i> Decrypted Message</h3>
+                                    <div class="box-actions">
+                                        <button class="action-btn" title="Copy" id="copy-decrypted">
+                                            <i class="fas fa-copy"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <textarea id="decrypted-message" placeholder="Decrypted message will appear here..." readonly></textarea>
+                                <div class="decryption-stats">
+                                    <div class="stat">
+                                        <i class="fas fa-shield-alt"></i>
+                                        <span>Verified</span>
+                                    </div>
+                                    <div class="stat">
+                                        <i class="fas fa-clock"></i>
+                                        <span id="decrypt-time">0ms</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="crypto-visualization">
+                        <div class="visualization-step">
+                            <div class="step-icon">1</div>
+                            <p>Plaintext Input</p>
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                        <div class="visualization-step">
+                            <div class="step-icon">2</div>
+                            <p>AES Encryption</p>
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                        <div class="visualization-step">
+                            <div class="step-icon">3</div>
+                            <p>Ciphertext</p>
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                        <div class="visualization-step">
+                            <div class="step-icon">4</div>
+                            <p>AES Decryption</p>
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                        <div class="visualization-step">
+                            <div class="step-icon">5</div>
+                            <p>Plaintext Output</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-logo">
+                        <div class="logo-mark small">
+                            <div class="dot"></div>
+                            <div class="ring"></div>
+                        </div>
+                        <div class="footer-info">
+                            <h3>Kavach Communication</h3>
+                            <p>DRDO Secure Communication System</p>
+                        </div>
+                    </div>
+                    <div class="footer-links">
+                        <div class="links-group">
+                            <h4>System</h4>
+                            <a href="#overview">Overview</a>
+                            <a href="#demo">Secure Comms</a>
+                        </div>
+                        <div class="links-group">
+                            <h4>Security</h4>
+                            <a href="#">Protocols</a>
+                            <a href="#">Encryption</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>© 2023 DRDO - Kavach Communication. All rights reserved.</p>
+                    <p>Security Level: <strong>TOP SECRET</strong></p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
